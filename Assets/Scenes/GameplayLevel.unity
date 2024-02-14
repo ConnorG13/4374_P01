@@ -554,9 +554,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4d1e2abb3913746a84bfe29b7da901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PlayerUnitPrefab>k__BackingField: {fileID: 724067797994214461, guid: 172ead8264e7ecf4695b02c8149100b4, type: 3}
-  <PlayerUnitSpawn>k__BackingField: {fileID: 74336799}
-  <UnitSpawner>k__BackingField: {fileID: 2109653062}
+  _tapLimitDuration: 2.5
+  _playerUnitPrefab: {fileID: 724067797994214461, guid: 172ead8264e7ecf4695b02c8149100b4, type: 3}
+  _playerUnitSpawn: {fileID: 74336799}
+  _unitSpawner: {fileID: 2109653062}
+  _input: {fileID: 134910286}
 --- !u!114 &593421135
 MonoBehaviour:
   m_ObjectHideFlags: 0
