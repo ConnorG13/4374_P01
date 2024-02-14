@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TouchManager : MonoBehaviour
+public class InputBroadcaster : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    public bool IsTapPressed { get; private set; } = false;
 
     private PlayerInput playerInput;
     private InputAction touchPositionAction;
@@ -30,20 +30,8 @@ public class TouchManager : MonoBehaviour
 
     private void TouchPressed(InputAction.CallbackContext context)
     {
-        Vector3 position = Camera.main.ScreenToWorldPoint(touchPositionAction.ReadValue<Vector2>());
-        position.z = player.transform.position.z;
-        player.transform.position = position;
+        IsTapPressed = !IsTapPressed;
+        Debug.Log(IsTapPressed);
     }
-
-    private void Update()
-    {
-        if (touchPressAction.WasPerformedThisFrame())
-        {
-            Vector3 position = Camera.main.ScreenToWorldPoint(touchPositionAction.ReadValue<Vector2>());
-            position.z = player.transform.position.z;
-            player.transform.position = position;
-        }
-    }
-
 
 }
