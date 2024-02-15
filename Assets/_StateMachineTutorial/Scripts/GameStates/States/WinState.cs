@@ -22,6 +22,8 @@ public class WinState : State
         _controller.HUD.DeactivateChild(0);
         _controller.HUD.ActivateChild(2);
         _controller.HUD.DeactivateChild(5);
+        _controller.HUD.ActivateChild(8);
+        _controller.HUD.ActivateChild(9);
     }
 
     public override void Exit()
