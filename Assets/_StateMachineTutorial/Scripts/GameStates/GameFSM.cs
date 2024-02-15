@@ -10,6 +10,10 @@ public class GameFSM : StateMachineMB
     //variables
     public GameSetupState SetupState { get; private set; }
     public GamePlayState PlayState { get; private set; }
+    public PlayerTurnMainState PlayerTurn { get; private set; }
+    public PlayerTurnMoveState PlayerMove { get; private set; }
+    public EnemyTurnState EnemyTurn { get; private set; }
+    public WinState WinState { get; private set; }
 
     private void Awake()
     {
@@ -17,6 +21,10 @@ public class GameFSM : StateMachineMB
         //instantiate
         SetupState = new GameSetupState(this, _controller);
         PlayState = new GamePlayState(this, _controller);
+        PlayerTurn = new PlayerTurnMainState(this, _controller);
+        PlayerMove = new PlayerTurnMoveState(this, _controller);
+        EnemyTurn = new EnemyTurnState(this, _controller);
+        WinState = new WinState(this, _controller);
     }
 
     private void Start()

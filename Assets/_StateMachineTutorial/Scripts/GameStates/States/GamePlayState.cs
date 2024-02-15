@@ -16,14 +16,14 @@ public class GamePlayState : State
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Play State Active!");
-        Debug.Log("Watch for Inputs.");
-        Debug.Log("Show HUD");
+        Debug.Log("START: Play");
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        Debug.Log("END: Play");
     }
 
     public override void FixedTick()
@@ -35,6 +35,7 @@ public class GamePlayState : State
     {
         base.Tick();
 
+        /*
         if(_controller.Input.IsTapPressed == true)
         {
             Debug.Log("You Win!");
@@ -43,5 +44,6 @@ public class GamePlayState : State
         {
             Debug.Log("You Lose!");
         }
+        */
     }
 }

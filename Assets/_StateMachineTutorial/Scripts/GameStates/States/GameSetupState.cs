@@ -17,16 +17,18 @@ public class GameSetupState : State
     {
         base.Enter();
 
-        Debug.Log("STATE: Game Setup");
-        Debug.Log("Setup Game");
-        Debug.Log("Spawn Units");
+        Debug.Log("STATE: Setup");
 
+        _controller.HUD.ActivateChild(3);
         _controller.UnitSpawner.Spawn(_controller.PlayerUnitPrefab, _controller.PlayerUnitSpawn);
+
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        Debug.Log("END: Setup");
     }
 
     public override void FixedTick()
@@ -37,6 +39,6 @@ public class GameSetupState : State
     public override void Tick()
     {
         base.Tick();
-        _stateMachine.ChangeState(_stateMachine.PlayState);
+        _stateMachine.ChangeState(_stateMachine.PlayerTurn);
     }
 }
