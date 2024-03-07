@@ -24,6 +24,7 @@ public class PlayerTurnMainState : State
         _controller.HUD.DeactivateChild(1);
         _controller.HUD.ActivateChild(4);
         _controller.HUD.ActivateChild(5);
+        _controller.HUD.ActivateChild(10);
     }
 
     public override void Exit()
@@ -33,6 +34,7 @@ public class PlayerTurnMainState : State
         Debug.Log("END: Main");
         _controller.HUD.DeactivateChild(4);
         _controller.HUD.DeactivateChild(5);
+        _controller.HUD.DeactivateChild(10);
     }
 
     public override void FixedTick()

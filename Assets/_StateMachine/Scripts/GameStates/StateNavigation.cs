@@ -20,4 +20,9 @@ public class StateNavigation : MonoBehaviour
     {
         _stateMachine.ChangeState(_stateMachine.PlayerTurn);
     }
+
+    public void ProceedToEnemy()
+    {
+        _stateMachine.ChangeState(_stateMachine.EnemyTurn);
+    }
 }

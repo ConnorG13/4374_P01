@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int _roomNum = 1;
 
-    // Update is called once per frame
-    void Update()
+    public void MoveUnitHere(int roomNumber)
     {
-        
+
     }
 }
