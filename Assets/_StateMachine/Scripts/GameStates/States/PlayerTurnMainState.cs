@@ -24,7 +24,7 @@ public class PlayerTurnMainState : State
         _controller.HUD.DeactivateChild(1);
         _controller.HUD.ActivateChild(4);
         _controller.HUD.ActivateChild(5);
-        _controller.HUD.ActivateChild(10);
+        _controller.HUD.ActivateChild(8);
     }
 
     public override void Exit()
@@ -34,7 +34,7 @@ public class PlayerTurnMainState : State
         Debug.Log("END: Main");
         _controller.HUD.DeactivateChild(4);
         _controller.HUD.DeactivateChild(5);
-        _controller.HUD.DeactivateChild(10);
+        _controller.HUD.DeactivateChild(8);
     }
 
     public override void FixedTick()
@@ -46,14 +46,21 @@ public class PlayerTurnMainState : State
     {
         base.Tick();
 
+        if (_controller.Player._roomNum == _controller.Enemy._roomNum)
+        {
+            _stateMachine.ChangeState(_stateMachine.LoseState);
+        }
+
         if (_controller.ActionCounter._actions <= 0)
         {
             _stateMachine.ChangeState(_stateMachine.EnemyTurn);
         }
 
-        if (_controller.TurnCounter._turn > 5)
+        
+        if (_controller.TurnCounter._turn > 6)
         {
             _stateMachine.ChangeState(_stateMachine.WinState);
         }
+        
     }
 }

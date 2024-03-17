@@ -14,6 +14,7 @@ public class GameFSM : StateMachineMB
     public PlayerTurnMoveState PlayerMove { get; private set; }
     public EnemyTurnState EnemyTurn { get; private set; }
     public WinState WinState { get; private set; }
+    public LoseState LoseState { get; private set; }
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class GameFSM : StateMachineMB
         PlayerMove = new PlayerTurnMoveState(this, _controller);
         EnemyTurn = new EnemyTurnState(this, _controller);
         WinState = new WinState(this, _controller);
+        LoseState = new LoseState(this, _controller);
     }
 
     private void Start()

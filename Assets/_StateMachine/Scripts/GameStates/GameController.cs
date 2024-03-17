@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private TurnCounter _TC;
     //[SerializeField] private AudioSource _audio;
     [SerializeField] private UnitMover _move;
+    [SerializeField] private Unit _player;
     [SerializeField] private Enemy _enemy;
 
     public float TapLimitDuration => _tapLimitDuration;
@@ -29,5 +30,6 @@ public class GameController : MonoBehaviour
     public TurnCounter TurnCounter => _TC;
     //public AudioSource AudioSource => _audio;
     public UnitMover UnitMover => _move;
+    public Unit Player => _player;
     public Enemy Enemy => _enemy;
 }

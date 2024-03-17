@@ -32,6 +32,8 @@ public class EnemyTurnState : State
 
         _controller.HUD.DeactivateChild(7);
 
+        _controller.Enemy.MonsterCheck();
+
         _controller.ActionCounter._actions = 3;
         _controller.TurnCounter._turn += 1;
     }
@@ -45,11 +47,11 @@ public class EnemyTurnState : State
     {
         base.Tick();
 
-        /* 
-        if(StateDuration >= _controller.TapLimitDuration)
+
+        if (StateDuration >= _controller.TapLimitDuration)
         {
             _stateMachine.ChangeState(_stateMachine.PlayerTurn);
         }
-        */
+        
     }
 }
