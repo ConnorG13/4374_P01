@@ -9,23 +9,25 @@ public class GameController : MonoBehaviour
 
     [Header("Dependencies")]
     [SerializeField] private Unit _playerUnitPrefab;
-    [SerializeField] private Transform _playerUnitSpawn;
-    [SerializeField] private UnitSpawner _unitSpawner;
+    //[SerializeField] private Transform _playerUnitSpawn;
+    //[SerializeField] private UnitSpawner _unitSpawner;
     [SerializeField] private InputBroadcaster _input;
     [SerializeField] private GameHUD _HUD;
     [SerializeField] private ActionCounter _AC;
     [SerializeField] private TurnCounter _TC;
-    [SerializeField] private AudioSource _audio;
+    //[SerializeField] private AudioSource _audio;
     [SerializeField] private UnitMover _move;
+    [SerializeField] private Enemy _enemy;
 
     public float TapLimitDuration => _tapLimitDuration;
     public Unit PlayerUnitPrefab => _playerUnitPrefab;
-    public Transform PlayerUnitSpawn => _playerUnitSpawn;
-    public UnitSpawner UnitSpawner => _unitSpawner;
+    //public Transform PlayerUnitSpawn => _playerUnitSpawn;
+    //public UnitSpawner UnitSpawner => _unitSpawner;
     public InputBroadcaster Input => _input;
     public GameHUD HUD => _HUD;
     public ActionCounter ActionCounter => _AC;
     public TurnCounter TurnCounter => _TC;
-    public AudioSource AudioSource => _audio;
+    //public AudioSource AudioSource => _audio;
     public UnitMover UnitMover => _move;
+    public Enemy Enemy => _enemy;
 }

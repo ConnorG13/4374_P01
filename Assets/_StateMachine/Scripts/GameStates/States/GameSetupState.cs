@@ -20,7 +20,7 @@ public class GameSetupState : State
         Debug.Log("STATE: Setup");
 
         _controller.HUD.ActivateChild(3);
-        _controller.UnitSpawner.Spawn(_controller.PlayerUnitPrefab, _controller.PlayerUnitSpawn);
+        //_controller.UnitSpawner.Spawn(_controller.PlayerUnitPrefab, _controller.PlayerUnitSpawn);
 
     }
 

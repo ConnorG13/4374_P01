@@ -45,9 +45,11 @@ public class EnemyTurnState : State
     {
         base.Tick();
 
+        /* 
         if(StateDuration >= _controller.TapLimitDuration)
         {
             _stateMachine.ChangeState(_stateMachine.PlayerTurn);
         }
+        */
     }
 }

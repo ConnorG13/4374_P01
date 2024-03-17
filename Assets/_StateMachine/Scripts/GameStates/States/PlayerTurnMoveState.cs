@@ -7,8 +7,6 @@ public class PlayerTurnMoveState : State
     private GameFSM _stateMachine;
     private GameController _controller;
 
-    // private bool _releaseReady = false;
-
     public PlayerTurnMoveState(GameFSM stateMachine, GameController controller)
     {
         _stateMachine = stateMachine;
@@ -30,6 +28,7 @@ public class PlayerTurnMoveState : State
         base.Exit();
         Debug.Log("END: Move");
 
+        _controller.ActionCounter._actions -= 1;
         _controller.HUD.DeactivateChild(6);
         _controller.UnitMover.ReactivateRooms();
     }
@@ -42,19 +41,5 @@ public class PlayerTurnMoveState : State
     public override void Tick()
     {
         base.Tick();
-        
-        /*
-        if (_controller.Input.IsTapPressed == true)
-        {
-            _releaseReady = true;
-        }
-
-        if (_controller.Input.IsTapPressed == false && _releaseReady == true)
-        {
-            _controller.ActionCounter._actions -= 1;
-            _stateMachine.ChangeStateToPrevious();
-            _releaseReady = false;
-        }
-        */
     }
 }

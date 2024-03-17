@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public int _roomNum = 1;
 
@@ -22,41 +22,8 @@ public class Unit : MonoBehaviour
 
     }
 
-    public void MoveUnitHere(int roomNumber)
+    public void MonsterCheck()
     {
-        _roomNum = roomNumber;
-
-        switch (_roomNum)
-        {
-            case 1:
-                ActivateChild(0);
-                DeactivateChild(1);
-                DeactivateChild(4);
-                break;
-            case 2:
-                ActivateChild(1);
-                DeactivateChild(0);
-                DeactivateChild(2);
-                break;
-            case 3:
-                ActivateChild(2);
-                DeactivateChild(1);
-                DeactivateChild(3);
-                DeactivateChild(5);
-                break;
-            case 4:
-                ActivateChild(3);
-                DeactivateChild(2);
-                break;
-            case 5:
-                ActivateChild(4);
-                DeactivateChild(0);
-                break;
-            case 6:
-                ActivateChild(5);
-                DeactivateChild(2);
-                break;
-        }
 
     }
 
